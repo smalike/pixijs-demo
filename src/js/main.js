@@ -105,6 +105,9 @@ function ballMouseupHandler() {
 window.addEventListener('mouseup', () => {
   ball.mouseup();
 });
+window.addEventListener('touchend', () => {
+  ball.touchend();
+});
 
 function gameLoop(delta) {
   state(delta);
@@ -123,7 +126,7 @@ function play(delta) {
     ball.y += ball.vy;
     // ball.vx = velocity * ball.force;
     ball.x += ball.vx;
-    console.log('ball.force', ball.force, ball.x, ball.vx);
+    // console.log('ball.force', ball.force, ball.x, ball.vx);
 
     background.y += background.vy;
     background.vx = velocity * ball.force;
